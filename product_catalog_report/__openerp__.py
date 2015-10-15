@@ -1,5 +1,5 @@
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>).
 #
@@ -14,21 +14,22 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 {
-    'name': 'Products Search Reference',
-    'version': '0.1',
-    'author': 'Tiny',
-    'category': 'Generic Modules/Inventory Control',
-    'depends': ['product'],
-    'init_xml': [],
-    'demo_xml': [],
-    'update_xml': ['product_view.xml'],
-    'description': '''
-    Add search by partner reference on product
-    ''',
+    "name":"Product Catalog - Print Report of product catalog with product image",
+    "version":"1.0",
+    "author":"Tiny",
+    "category":"Generic Modules/Inventory Control",
+    "description": """
+    This module use to print report of product catalog with product image, list price
+    """,
+    "depends":["base","product"],
+    "demo_xml":[],
+    "update_xml":['product_report.xml','product_wizard.xml'],
+    "active":False,
+    "installable":False,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 

@@ -1,7 +1,8 @@
+# -*- coding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>).
+#    This module copyright (C) 2015 Therp BV (<http://therp.nl>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -14,22 +15,18 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    "name":"Product Catalog - Print Report of product catalog with product image",
-    "version":"1.0",
-    "author":"Tiny",
-    "category":"Generic Modules/Inventory Control",
-    "description": """
-    This module use to print report of product catalog with product image, list price
-    """,
-    "depends":["base","product"],
-    "demo_xml":[],
-    "update_xml":['product_report.xml','product_wizard.xml'],
-    "active":False,
-    "installable":True,
-}
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 
+
+def migrate(cr, version):
+    """get our value from product_product"""
+    cr.execute(
+        'update product_template t set '
+        'manufacturer = coalesce(t.manufacturer, p.manufacturer), '
+        'manufacturer_pname = '
+        'coalesce(t.manufacturer_pname, p.manufacturer_pname), '
+        'manufacturer_pref = '
+        'coalesce(t.manufacturer_pref, p.manufacturer_pref) '
+        'from product_product p where p.product_tmpl_id=t.id')
