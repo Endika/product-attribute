@@ -25,8 +25,8 @@ class Product(models.Model):
 
     @api.onchange('length', 'height', 'width', 'dimensional_uom_id')
     def onchange_calculate_volume(self):
-        if (not self.length or not self.height or not self.width
-                or not self.dimensional_uom_id):
+        if (not self.length or not self.height or not self.width or
+                not self.dimensional_uom_id):
             return False
 
         length_m = self.convert_to_meters(self.length, self.dimensional_uom_id)
@@ -42,11 +42,17 @@ class Product(models.Model):
             qty=measure,
             to_unit=uom_meters)
 
+    @api.model
+    def _get_dimension_uom_domain(self):
+        return [
+            ('category_id', '=', self.env.ref('product.uom_categ_length').id)
+        ]
+
     length = fields.Float()
     height = fields.Float(oldname='high')
     width = fields.Float()
     dimensional_uom_id = fields.Many2one(
         'product.uom',
         'Dimensional UoM',
-        domain="[('category_id.name', '=', 'Length / Distance')]",
+        domain=_get_dimension_uom_domain,
         help='UoM for length, height, width')

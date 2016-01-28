@@ -11,6 +11,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
+[pricelist_per_product](pricelist_per_product/) | 8.0.1.0.0 | Pricelist Per Product
 [product_attribute_multi_type](product_attribute_multi_type/) | 8.0.1.0.0 | Product attribute types
 [product_brand](product_brand/) | 8.0.0.1.0 | Add brand to products
 [product_dimension](product_dimension/) | 8.0.2.0.0 | Product Dimension
@@ -18,7 +19,10 @@ addon | version | summary
 [product_m2mcategories](product_m2mcategories/) | 8.0.1.0.2 | Product - Many Categories
 [product_manufacturer](product_manufacturer/) | 8.0.1.0.0 | Products Manufacturers
 [product_pricelist_fixed_price](product_pricelist_fixed_price/) | 8.0.1.0 | Fixed price in pricelists
+[product_profile](product_profile/) | 8.0.1.0.0 | Set a configuration profile to product templates
+[product_profile_example](product_profile_example/) | 8.0.1.0.0 | Product Profile Use Case
 [product_sequence](product_sequence/) | 8.0.0.1.0 | Product Sequence
+[product_supplierinfo_for_customer](product_supplierinfo_for_customer/) | 8.0.1.0.0 | Use product supplier info for customers too
 [product_supplierinfo_tree_price_info](product_supplierinfo_tree_price_info/) | 8.0.1.0 | Supplier Unit Price on Product Form
 [product_weight](product_weight/) | 8.0.0.2.0 | Allows to calculate products weight from its components.
 
@@ -40,7 +44,6 @@ addon | version | summary
 [product_index](product_index/) | 1.0 (unported) | Manage indexes on products prices
 [product_listprice_upgrade](product_listprice_upgrade/) | 1.0 (unported) | Product listprice upgrade
 [product_lot_foundry](product_lot_foundry/) | 1.0 (unported) | Products Lot Foundry
-[product_multi_company](product_multi_company/) | 1.1 (unported) | Product multi company
 [product_multi_price](product_multi_price/) | 0.1 (unported) | product_multi_price
 [product_prices_on_variant](product_prices_on_variant/) | 0.1 (unported) | product_prices_on_variant
 [product_qt](product_qt/) | 1.0 (unported) | Products & Pricelists - Define quality control and testing parameters in product
